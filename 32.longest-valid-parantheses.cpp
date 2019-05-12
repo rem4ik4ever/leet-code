@@ -1,7 +1,30 @@
+
+
 #include <iostream>
 #include <vector>
+#include <stack>
 
 using namespace std;
+
+class Solution
+{
+public:
+  int longestValidParentheses(string s)
+  {
+    stack<char> st;
+    int max = 0;
+    for (int i = 0; i < s.length; i++)
+    {
+      if (s[i] == '(')
+      {
+        st.push(s[i]);
+        while (st.size() != 0)
+        {
+        }
+      }
+    }
+  }
+};
 
 void reverse(vector<int> v)
 {
