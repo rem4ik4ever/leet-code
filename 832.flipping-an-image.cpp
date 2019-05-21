@@ -25,10 +25,9 @@ public:
   }
 };
 
-int mina()
+int main()
 {
   Solution s;
   vector<vector<int>> v = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
-
   return 0;
 }
