@@ -142,7 +142,7 @@ void printMatrix(vector<vector<int>> matrix)
 
 int main()
 {
-    Solution s;
+    Solution2 s;
     vector<int> input = {-1, 0, 1, 2, -1, -4};
     vector<vector<int>> res = s.threeSum(input);
     cout << res.size() << endl;
