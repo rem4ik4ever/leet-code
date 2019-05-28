@@ -4,57 +4,42 @@
 using namespace std;
 
 // Not solved :(
+// Solved :)
 
+// Find the largest index k such that nums[k] < nums[k + 1]. If no such index exists, just reverse nums and done.
+// Find the largest index l > k such that nums[l] > nums[k].
+// Swap nums[k] and nums[l].
+// Reverse the sub-array nums[k + 1:].
 class Solution
 {
 public:
   void nextPermutation(vector<int> &nums)
   {
-    int st = nums.size() - 1;
-    while (st >= 0)
+    int k, n = nums.size(), l;
+
+    for (k = nums.size() - 2; k >= 0; --k)
     {
-      if (st - 1 >= 0)
+      if (nums[k] < nums[k + 1])
       {
-        if (nums[st] > nums[st - 1])
+        break;
+      }
+    }
+    if (k < 0)
+    {
+      reverse(nums.begin(), nums.end());
+    }
+    else
+    {
+      for (l = n - 1; l > k; --l)
+      {
+        if (nums[l] > nums[k])
         {
-          --st;
           break;
         }
-        else
-        {
-          --st;
-        }
       }
-      else
-      {
-        --st;
-      }
+      swap(nums[l], nums[k]);
+      reverse(nums.begin() + k + 1, nums.end());
     }
-    if (st < 0)
-    {
-      st = 0;
-    }
-    print_array(nums);
-
-    reverse(nums, st);
-  }
-
-  void reverse(vector<int> &v, int start)
-  {
-    for (int i = start, j = v.size() - 1; i < j; i++, --j)
-    {
-      swap(v[i], v[j]);
-    }
-  }
-  void print_array(vector<int> v)
-  {
-    for (int i = 0; i < v.size(); i++)
-    {
-      if (i > 0)
-        cout << ", ";
-      cout << v[i];
-    }
-    cout << endl;
   }
 };
 
