@@ -5,6 +5,8 @@
 
 # But not .cpp
 !*.cpp
+# But not .py
+!*.py
 # Or directories
 !*/
 !.gitignore
